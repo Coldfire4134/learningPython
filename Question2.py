@@ -18,10 +18,12 @@ account = 0
 successfulTransaction = 1
 while successfulTransaction:
     transaction = raw_input("Enter Transaction: ").split(" ")
-    if transaction[0] == 'D':
+    if transaction[0].upper() == 'D':
         account += int(transaction[1])
-    elif transaction[0] == 'W':
+    elif transaction[0].upper() == 'W':
         account -= int(transaction[1])
-    elif transaction[0] == "quit":
+    elif transaction[0].upper() == "QUIT":
         successfulTransaction = 0
         print(account)
+    else:
+        print("ERROR: Command not found!")
